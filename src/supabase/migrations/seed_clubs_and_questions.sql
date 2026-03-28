@@ -1,0 +1,26 @@
+-- ============================================
+-- 初始化数据：测评题目
+-- ============================================
+
+INSERT INTO questions (id, question_text, question_type, options, category, order_index) VALUES
+('11111111-1111-1111-1111-111111111111', '周末你更喜欢？', 'single', '[{"value": "学习", "tags": ["学术研究", "理论学习"], "score": 1}, {"value": "运动", "tags": ["体育运动", "健身跑步"], "score": 1}, {"value": "社交", "tags": ["社交联谊", "团队合作"], "score": 1}, {"value": "创作", "tags": ["艺术创作", "技术创新"], "score": 1}, {"value": "休息", "tags": ["休闲娱乐"], "score": 0.5}]'::jsonb, '日常活动偏好', 1),
+('22222222-2222-2222-2222-222222222222', '你偏好哪种学习方式？', 'single', '[{"value": "理论", "tags": ["学术研究", "理论研究"], "score": 1}, {"value": "实践", "tags": ["编程技术", "创新创业"], "score": 1}, {"value": "讨论", "tags": ["社交联谊", "语言表达"], "score": 1}, {"value": "自学", "tags": ["学术研究", "自我提升"], "score": 1}]'::jsonb, '学习风格', 2),
+('33333333-3333-3333-3333-333333333333', '你希望在社团中扮演什么角色？', 'single', '[{"value": "组织者", "tags": ["领导力", "组织管理"], "score": 1}, {"value": "参与者", "tags": ["团队合作", "社交联谊"], "score": 1}, {"value": "观察者", "tags": ["学术研究", "技能学习"], "score": 1}]'::jsonb, '社交场景', 3),
+('44444444-4444-4444-4444-444444444444', '以下哪类活动最吸引你？', 'multi', '[{"value": "学术讲座", "tags": ["学术研究", "知识分享"], "score": 1}, {"value": "体育竞技", "tags": ["球类运动", "健身跑步"], "score": 1}, {"value": "文艺表演", "tags": ["音乐舞蹈", "戏剧表演"], "score": 1}, {"value": "志愿服务", "tags": ["公益志愿", "社区服务"], "score": 1}, {"value": "技术创作", "tags": ["编程技术", "创新创业"], "score": 1}, {"value": "语言交流", "tags": ["英语角", "日语社"], "score": 1}]'::jsonb, '活动类型偏好', 4),
+('55555555-5555-5555-5555-555555555555', '你愿意每周花多少时间在社团？', 'single', '[{"value": "<2h", "tags": ["轻度参与"], "score": 0.5}, {"value": "2-5h", "tags": ["适度参与"], "score": 1}, {"value": "5-10h", "tags": ["深度参与"], "score": 1.5}, {"value": ">10h", "tags": ["全身心投入"], "score": 2}]'::jsonb, '时间投入意愿', 5),
+('66666666-6666-6666-6666-666666666666', '你最想在社团中提升什么？', 'multi', '[{"value": "专业技能", "tags": ["学术研究", "编程技术"], "score": 1}, {"value": "人际交往", "tags": ["社交联谊", "团队合作"], "score": 1}, {"value": "领导能力", "tags": ["组织管理", "领导力"], "score": 1}, {"value": "艺术修养", "tags": ["音乐舞蹈", "绘画书法"], "score": 1}, {"value": "身体素质", "tags": ["体育运动", "健身"], "score": 1}]'::jsonb, '技能提升目标', 6),
+('77777777-7777-7777-7777-777777777777', '你更喜欢哪种规模的社团？', 'single', '[{"value": "<20人", "tags": ["紧密小团体"], "score": 1}, {"value": "20-50人", "tags": ["适中规模"], "score": 1}, {"value": "50-100人", "tags": ["大型社团"], "score": 1}, {"value": ">100人", "tags": ["超大型社团"], "score": 1}]'::jsonb, '社团规模偏好', 7);
+
+-- ============================================
+-- 初始化数据：示例社团
+-- ============================================
+
+INSERT INTO clubs (id, name, cover_image, description, category, tags, scale, leader_name, contact, max_members, current_members, recruit_open) VALUES
+('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa1', '科技创新协会', 'https://nocode.meituan.com/photo/search?keyword=technology,innovation&width=750&height=400', '科技创新协会是一个汇聚编程爱好者、技术创新者的学术科技类社团。我们定期举办技术分享会、编程马拉松和创新项目孵化活动，为成员提供学习前沿技术、实践创新想法的平台。', '学术科技', '["学术研究", "编程技术", "创新创业"]'::jsonb, '50-100人', '张同学', 'zhang@example.com', 50, 32, true),
+('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa2', '创客空间', 'https://nocode.meituan.com/photo/search?keyword=maker,DIY&width=750&height=400', '创客空间是动手实践爱好者的天堂。我们提供3D打印机、激光切割机等设备，鼓励成员将创意变为现实。无论你是想制作智能硬件、设计产品原型还是探索新技术，这里都是你的最佳选择。', '学术科技', '["创新创业", "技术实践", "硬件开发"]'::jsonb, '20-50人', '李同学', 'li@example.com', 30, 18, true),
+('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa3', '音乐社', 'https://nocode.meituan.com/photo/search?keyword=music,band&width=750&height=400', '音乐社是校园内最具影响力的艺术类社团之一。我们涵盖声乐、器乐、乐队等多个方向，定期举办音乐会、路演和校内外演出。无论你是音乐高手还是初学者，都能在这里找到属于自己的舞台。', '艺术文化', '["音乐舞蹈", "表演艺术", "文艺创作"]'::jsonb, '>100人', '王同学', 'wang@example.com', 100, 78, true),
+('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa4', '摄影协会', 'https://nocode.meituan.com/photo/search?keyword=photography,camera&width=750&height=400', '摄影协会致力于培养校园摄影人才，定期组织外拍活动、摄影比赛和后期处理工作坊。我们拥有专业摄影器材和经验丰富的指导老师，帮助成员提升摄影技术和审美能力。', '艺术文化', '["绘画书法", "艺术创作", "视觉设计"]'::jsonb, '50-100人', '赵同学', 'zhao@example.com', 60, 45, true),
+('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa5', '篮球社', 'https://nocode.meituan.com/photo/search?keyword=basketball,sports&width=750&height=400', '篮球社是校园篮球爱好者的聚集地。我们每周组织训练、友谊赛，并参加校际联赛。无论你是想提升球技、锻炼身体还是结交志同道合的朋友，篮球社都欢迎你的加入！', '体育运动', '["球类运动", "健身", "团队合作"]'::jsonb, '>100人', '刘同学', 'liu@example.com', 80, 65, true),
+('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa6', '户外探险协会', 'https://nocode.meituan.com/photo/search?keyword=hiking,outdoor&width=750&height=400', '户外探险协会专注于组织各类户外活动，包括徒步、露营、登山、骑行等。我们倡导亲近自然、挑战自我的生活方式，是喜欢冒险和户外运动同学的最佳选择。', '体育运动', '["户外探险", "自然探索", "体能挑战"]'::jsonb, '20-50人', '陈同学', 'chen@example.com', 40, 28, true),
+('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa7', '志愿者协会', 'https://nocode.meituan.com/photo/search?keyword=volunteer,community&width=750&height=400', '志愿者协会致力于组织各类公益志愿活动，包括社区服务、支教助学、环保行动等。加入我们，用实际行动传递温暖，在服务他人中收获成长和快乐。', '公益志愿', '["社区服务", "环保行动", "支教助学"]'::jsonb, '>100人', '周同学', 'zhou@example.com', 150, 120, true),
+('aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaa8', '英语角', 'https://nocode.meituan.com/photo/search?keyword=english,language&width=750&height=400', '英语角是一个轻松愉快的英语学习交流平台。我们每周举办主题活动，邀请外教参与，帮助成员提升口语表达能力、拓展国际视野。无论你是备考四六级还是想提高日常交流能力，都欢迎加入！', '语言交流', '["英语角", "语言学习", "国际交流"]'::jsonb, '50-100人', '吴同学', 'wu@example.com', 50, 38, true);
